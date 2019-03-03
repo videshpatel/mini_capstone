@@ -18,9 +18,23 @@ class Api::ProductsController < ApplicationController
       image_url: params[:input_image_url],
       description: params[:input_description],
      )
-    render 'create.json.jbuilder'
     @product.save
+    render 'show.json.jbuilder'
   end
 
+  def update
+    #find the product.
+    the_id = params[:id]
+    @product = Product.find_by(id: the_id)
+    #modify the product.
+    @product.name = params[:name]
+    @product.price = params[:price]
+    @product.image_url = params[:image_url]
+    @product.description = params[:description]
+    
+    @product.save
+
+    render 'show.json.jbuilder'
+  end
 
 end
