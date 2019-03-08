@@ -18,8 +18,13 @@ class Api::ProductsController < ApplicationController
       image_url: params[:input_image_url],
       description: params[:input_description],
      )
-    @product.save
-    render 'show.json.jbuilder'
+    if 
+      @product.save
+      render 'show.json.jbuilder'
+    else
+      @product.save
+      render 'errors.json.jbuilder'
+    end
   end
 
   def update
@@ -27,15 +32,18 @@ class Api::ProductsController < ApplicationController
     the_id = params[:id]
     @product = Product.find_by(id: the_id)
     #modify the product.
-    @product.name = params[:name]
-    @product.price = params[:price]
-    @product.image_url = params[:image_url]
-    @product.description = params[:description]
-    
-    @product.save
-
-    render 'show.json.jbuilder'
-  end
+    @product.name = params[:name] || @product.name
+    @product.price = params[:price] || @product.price
+    @product.image_url = params[:image_url] || @product.image_url
+    @product.description = params[:description] || @product.description
+    if 
+      @product.save
+      render 'show.json.jbuilder'
+    else
+      @product.save
+      render 'errors.json.jbuilder'
+    end
+  end    
 
   def destroy
     #find the product
