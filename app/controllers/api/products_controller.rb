@@ -68,4 +68,3 @@ class Api::ProductsController < ApplicationController
     render 'destroy.json.jbuilder'
   end
 
-end
