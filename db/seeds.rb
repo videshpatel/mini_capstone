@@ -12,3 +12,17 @@ supplier2.save
 
 supplier3 = Supplier.new ({name:"Stanley", email: "stanley@Stanley.com",phone_number: "86656544343"})
 supplier3.save
+
+
+
+# products = Product.all
+
+# products.each do |product|
+#   # assign it a new supplier_id
+#   supplier_id = Supplier.all.sample.id
+#   product.supplier_id = supplier_id
+#   product.save
+# end
+ 
+# # or 
+# Product.update_all(supplier_id: rand(1..3))
