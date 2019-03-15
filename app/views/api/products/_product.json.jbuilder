@@ -1,8 +1,10 @@
+json.user current_user
 json.id product.id
 json.name product.name
 json.price product.price
-# json.image_url product.image_url
+json.image_url product.images.url
 json.description product.description
+# json.current_user product.current_user   <<<<<<<<<<<<<<<<<
 
 json.formatted do 
   json.discount product.is_discounted?

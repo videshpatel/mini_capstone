@@ -6,13 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-supplier2 = Supplier.new ({name:"Adidas", email: "adidas@adidas.com",phone_number: "3343490494"})
-supplier2.save
+# supplier2 = Supplier.new ({name:"Adidas", email: "adidas@adidas.com",phone_number: "3343490494"})
+# supplier2.save
 
-
-supplier3 = Supplier.new ({name:"Stanley", email: "stanley@Stanley.com",phone_number: "86656544343"})
-supplier3.save
-
+# order2 = Order.new(user_id: 2, product_id: 2,quantity: 1,subtotal: 40,tax: 4,total: 44)
+# order2.save
 
 
 # products = Product.all
