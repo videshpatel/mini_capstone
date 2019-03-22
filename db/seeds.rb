@@ -24,3 +24,12 @@
  
 # # or 
 # Product.update_all(supplier_id: rand(1..3))
+
+category1 = Category.new(name: "clothing")
+category1.save
+
+category2 = Category.new(name: "tools")
+category2.save
+
+category3 = Category.new(name: "electronics")
+category3.save

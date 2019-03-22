@@ -1,4 +1,7 @@
 class Order < ApplicationRecord
+  # has_many :users
+  # has_many :products, through: :user
+  
   belongs_to :user
-  belongs_to :product
+  has_many :carted_products
 end
