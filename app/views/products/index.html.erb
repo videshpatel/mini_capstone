@@ -1,0 +1,15 @@
+
+<% @products.each do |product| %>
+<p>:id <%= product.id %></p>
+<p>:name <a href="products/<%=product.id%>"><%= product.name %></a></p>
+<p>:price <%= product.price %></p>
+<!-- <p>:images <%= product.images %></p> -->
+<img src="<%= product.images %>">
+<p>:description <%= product.description %></p>
+<p>:categories <%= product.categories %></p>
+<p>:discounted <%= product.is_discounted? %></p>
+<p>:tax <%= product.tax %></p>
+<p>:total <%= product.total %></p>
+<p>:supplier <%= product.supplier.name %></p>
+<hr>
+<%end%>

@@ -1,0 +1,13 @@
+<a href="/products">Go back to the home page.</a>
+
+<p>:id <%= @product.id %></p>
+<p>:name <%= @product.name %></p>
+<p>:price <%= @product.price %></p>
+<img src="<%= @product.images[0].url %>">
+<p>:description <%= @product.description %></p>
+<p>:categories <%= @product.categories %></p>
+<p>:discounted <%= @product.is_discounted? %></p>
+<p>:tax <%= @product.tax %></p>
+<p>:total <%= @product.total %></p>
+<p>:supplier <%= @product.supplier.name %></p>
+<hr>

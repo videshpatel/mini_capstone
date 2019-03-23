@@ -5,8 +5,8 @@ class Product < ApplicationRecord
   # has_many :orders, through: :user
 
   has_many :images
-  has_many :product_categories
-  has_many :categories, through: :product_category
+  has_many :category_products
+  has_many :categories, through: :category_products
   has_many :carted_products
 
   validates :name, presence: true
