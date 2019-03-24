@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @suppliers = Supplier.all
     render 'new.html.erb'
   end
 
@@ -25,5 +26,26 @@ class ProductsController < ApplicationController
     @product.save
     # render 'show.html.erb'
     redirect_to "/products/#{@product.id}"
+  end
+  
+  def edit
+    @product = Product.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.name = params[:name]
+    @product.price = params[:price]
+    @product.description = params[:description]
+    @supplier_id = params[:supplier_id]
+    
+    @product.save
+    redirect_to "/products/#{@product.id}"
+  end
+
+  def destroy
+    
+    
   end
 end

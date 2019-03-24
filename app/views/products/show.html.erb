@@ -10,4 +10,12 @@
 <p>:tax <%= @product.tax %></p>
 <p>:total <%= @product.total %></p>
 <p>:supplier <%= @product.supplier.name %></p>
+
+<form action="/products/<%= @product.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Name: <%= @product.name %>, ID: <%= @product.id %>">
+</form>
+
+<!-- <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow">Delete Name: <%= @product.name %>, ID: <%= @product.id %></a> -->
+
 <hr>

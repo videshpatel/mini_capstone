@@ -12,6 +12,7 @@
   <body>
 <!--    <%#if current_user %> -->
       <a href="/products/new">Make new product</a>
+      <a href="/products/<%= @product.id %>/edit">Update Product</a>
 <!--     <%#end%> -->
     <%= yield %>
   </body>
